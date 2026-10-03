@@ -1,0 +1,25 @@
+{
+  "name": "repobreakdown-monorepo",
+  "version": "1.0.0",
+  "description": "RepoBreakdown - AI-Powered Developer Onboarding & Codebase Comprehension Tool",
+  "scripts": {
+    "dev": "concurrently -n \"backend,python,frontend\" -c \"blue,yellow,magenta\" \"npm run dev:backend\" \"npm run dev:python\" \"npm run dev:frontend\"",
+    "install:all": "npm --prefix backend install && npm --prefix frontend install && pip install -r python_service/requirements.txt",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:python": "python -m uvicorn app.main:app --app-dir python_service --host 127.0.0.1 --port 8000"
+  },
+  "keywords": [
+    "ast",
+    "codebase-analysis",
+    "react-flow",
+    "developer-onboarding",
+    "fastapi",
+    "express"
+  ],
+  "author": "RepoBreakdown Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}
